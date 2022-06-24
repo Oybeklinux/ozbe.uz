@@ -25,8 +25,9 @@ class ImagesSerializer(serializers.ModelSerializer):
     #     return lst
     #
 
+
 class ProductSerializer(serializers.ModelSerializer):
-    images = ImagesSerializer(many=True)
+    images = ImagesSerializer(many=True, read_only=True)
 
     class Meta:
         model = Products
@@ -64,7 +65,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
-    products = ProductSerializer(many=True)
+    products = ProductSerializer(many=True, read_only=True)
     
     class Meta:
         model = Category
@@ -72,7 +73,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class OrganizationSerializer(serializers.ModelSerializer):
-    products = ProductSerializer(many=True)
+    products = ProductSerializer(many=True, read_only=True)
 
     class Meta:
         model = Organization
