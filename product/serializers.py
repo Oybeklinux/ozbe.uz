@@ -53,6 +53,7 @@ class ProductSerializer(serializers.ModelSerializer):
             "created": obj.created,
             "material": obj.material,
             "color": obj.color,
+            "status": obj.status,
             "category": {
                 "name": obj.category.name,
                 "id": obj.category.id
